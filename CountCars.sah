@@ -1,0 +1,18 @@
+/**
+* BuildAndPrice
+*/
+function BuildAndPrice(){
+	_click(_link("PURCHASE"));
+	_click(_heading3("BUILD AND PRICE[1]"));
+}
+
+
+/**
+* CountCars
+*/
+function CountCars(){
+	//implement method
+	var $CarsCount = _count("_div", "/mediaOverlayImage/", _in(_div("cmp-contentCardsInner")))
+	_log("Cars Present in the Page: "+ $CarsCount)
+
+}

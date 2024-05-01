@@ -1,0 +1,12 @@
+$request = new RESTRequest();
+$request.setURL("https://petstore.swagger.io/v2/pet/findByStatus");
+$request.addToQueryString("status", "sold");
+$response = $request.submit("GET");
+var $responseBody = $response.getBodyAsString();
+var $responseBodyObj = JSON.parse($response.getBodyAsString());
+
+//assertions
+
+_assertEqual("200", $response.getResponseCode());
+
+_assertEqual("sold", $responseBodyObj[0].status);
